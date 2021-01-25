@@ -1,10 +1,22 @@
 import React, { useState } from "react";
 import PhoneInTalkIcon from "@material-ui/icons/PhoneInTalk";
 import { Link } from "react-router-dom";
+import CustomSelect from "../../CustomSelect";
 
 const TopNavbar = () => {
   // for languages and currency I will use SELECT
   const [user, setUser] = useState(false);
+  const [languages, setLanguages] = useState([
+    { code: "EN", name: "England" },
+    { code: "SL", name: "Slovenia" },
+    { code: "DE", name: "Germany" },
+  ]);
+  const [currency, setCurrency] = useState([
+    { code: "EURO", name: "Euro" },
+    { code: "USD", name: "United States Dollars" },
+    { code: "JP", name: "Jen" },
+  ]);
+  console.log(languages);
   return (
     <div id='topNavbar'>
       <div className='call'>
@@ -16,6 +28,10 @@ const TopNavbar = () => {
       <div className='top-links'>
         <ul>
           {user ? (
+            <li>
+              <Link to='/profile'>My Account</Link>
+            </li>
+          ) : (
             <>
               <li>
                 <Link to='/login'>Login</Link>
@@ -24,13 +40,13 @@ const TopNavbar = () => {
                 <Link to='/register'>Register</Link>
               </li>
             </>
-          ) : (
-            <li>
-              <Link to='/profile'>My Account</Link>
-            </li>
           )}
-          <li>EN v</li>
-          <li>USD v</li>
+          <li>
+            <CustomSelect values={languages} />
+          </li>
+          <li>
+            <CustomSelect values={currency} />
+          </li>
         </ul>
       </div>
     </div>

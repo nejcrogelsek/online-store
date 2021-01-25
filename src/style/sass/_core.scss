@@ -1,3 +1,6 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
 /* Media breakpoints */
 $mobile: "(min-width: 576px)";
 $tablet: "(min-width: 768px)";
@@ -9,6 +12,7 @@ $huge: "(min-width: 1680px)";
 $blue: #013648;
 $red: #ed2329;
 $black: #000;
+$blackLight: #33383f;
 $white: #fff;
 
 *,
@@ -19,9 +23,9 @@ $white: #fff;
   box-sizing: border-box;
 }
 body {
-  margin: 0;
-  font-family: "iCielMedium", "Noto Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
