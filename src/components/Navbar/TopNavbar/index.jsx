@@ -3,6 +3,7 @@ import PhoneInTalkIcon from "@material-ui/icons/PhoneInTalk";
 import { Link } from "react-router-dom";
 
 const TopNavbar = () => {
+  // for languages and currency I will use SELECT
   const [user, setUser] = useState(false);
   return (
     <div id='topNavbar'>
