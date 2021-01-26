@@ -1,0 +1,29 @@
+header #topNavbar {
+  display: flex;
+  padding-top: 5px;
+  height: 35px;
+  .call {
+    font-size: 0.8125rem;
+    > span {
+      margin-left: 15px;
+    }
+    > a {
+      color: #ed2329;
+      font-weight: 600;
+    }
+  }
+  .top-links {
+    ul li {
+      display: inline-block;
+      border-right: 1px solid #ddd;
+      padding: 0 10px;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        border: none;
+        padding-right: 0;
+      }
+    }
+  }
+}

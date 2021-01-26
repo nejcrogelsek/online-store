@@ -21,8 +21,9 @@ const TopNavbar = () => {
     <div id='topNavbar'>
       <div className='call'>
         <PhoneInTalkIcon />
+        <span>Call us </span>
         <a href='tel:000000000'>
-          Call us <span>070-070-070</span>
+          070-070-070
         </a>
       </div>
       <div className='top-links'>
