@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Logo from "../../../assets/images/logo.svg";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import SearchIcon from "@material-ui/icons/Search";
@@ -9,7 +9,7 @@ const MiddleNavbar = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   const startSearch = () => {
-    console.log("jojojojojoo");
+    setIsMobile(!isMobile);
   };
   return (
     <div id='middleNavbar'>
@@ -28,6 +28,7 @@ const MiddleNavbar = () => {
                 type='text'
                 name='search'
                 id='search'
+                value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
               <button type='submit' onClick={startSearch}>
