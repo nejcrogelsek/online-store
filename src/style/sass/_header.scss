@@ -2,6 +2,7 @@ header #topNavbar {
   display: flex;
   padding-top: 5px;
   height: 35px;
+  justify-content: space-between;
   .call {
     font-size: 0.8125rem;
     > span {
@@ -13,6 +14,7 @@ header #topNavbar {
     }
   }
   .top-links {
+    font-size: 0.8125rem;
     ul li {
       display: inline-block;
       border-right: 1px solid #ddd;

@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Select, FormControl, MenuItem } from "@material-ui/core/";
-import useStyles from "./styles";
+import "./styles.css";
 
 const CustomSelect = ({ values }) => {
-  const classes = useStyles();
-
   const [stateValue, setStateValue] = useState(null);
 
   useEffect(() => {
@@ -14,20 +11,18 @@ const CustomSelect = ({ values }) => {
 
   return (
     <>
-      <FormControl className={classes.formControl}>
-        <Select
+      <div class='select'>
+        <select
+          id='standard-select'
           value={stateValue}
           onChange={(e) => setStateValue(e.target.value)}>
           {values.map((value) => (
-            <MenuItem key={value.code} value={value.code}>
-              {stateValue}
-            </MenuItem>
+            <option key={value.code} value={value.code}>
+              {value.code}
+            </option>
           ))}
-          <MenuItem value={10}>SL</MenuItem>
-          <MenuItem value={20}>EN</MenuItem>
-          <MenuItem value={30}>DE</MenuItem>
-        </Select>
-      </FormControl>
+        </select>
+      </div>
     </>
   );
 };
