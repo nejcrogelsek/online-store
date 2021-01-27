@@ -115,3 +115,12 @@ header #middleNavbar > .content .middle-buttons .shopping-cart {
     text-align: center;
   }
 }
+#bottomNavbar ul {
+  li {
+    display: inline-block;
+    margin-left: 15px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

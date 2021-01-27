@@ -5,7 +5,7 @@ import CustomSelect from "../../CustomSelect";
 
 const TopNavbar = () => {
   // for languages and currency I will use SELECT
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(true);
   const [languages, setLanguages] = useState([
     { code: "EN", name: "England" },
     { code: "SL", name: "Slovenia" },
@@ -22,16 +22,19 @@ const TopNavbar = () => {
       <div className='call'>
         <PhoneInTalkIcon />
         <span>Call us </span>
-        <a href='tel:000000000'>
-          070-070-070
-        </a>
+        <a href='tel:000000000'>070-070-070</a>
       </div>
       <div className='top-links'>
         <ul>
           {user ? (
-            <li>
-              <Link to='/profile'>My Account</Link>
-            </li>
+            <>
+              <li>
+                <Link to='/profile'>My Account</Link>
+              </li>
+              <li>
+                <Link to='/wishlist'>Wishlist</Link>
+              </li>
+            </>
           ) : (
             <>
               <li>

@@ -29,7 +29,7 @@ const MiddleNavbar = () => {
                 name='search'
                 id='search'
                 value={search}
-                placeholder="Search..."
+                placeholder='Search...'
                 onChange={(e) => setSearch(e.target.value)}
               />
               <button type='submit' onClick={startSearch}>
