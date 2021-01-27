@@ -5,10 +5,12 @@ import TopNavbar from "./TopNavbar";
 
 const Navbar = () => {
   return (
-    <header className='container'>
-      <TopNavbar />
-      <MiddleNavbar />
-      <BottomNavbar />
+    <header>
+      <div className='container'>
+        <TopNavbar />
+        <MiddleNavbar />
+        <BottomNavbar />
+      </div>
     </header>
   );
 };

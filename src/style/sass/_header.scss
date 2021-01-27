@@ -1,3 +1,6 @@
+header {
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
 header #topNavbar {
   display: flex;
   justify-content: space-between;
@@ -96,6 +99,10 @@ header #middleNavbar > .content .search-box {
       text-transform: uppercase;
       letter-spacing: 0.5px;
       font-weight: 500;
+      transition: 0.5s;
+      &:hover {
+        color: #000;
+      }
     }
   }
 }
@@ -115,12 +122,95 @@ header #middleNavbar > .content .middle-buttons .shopping-cart {
     text-align: center;
   }
 }
-#bottomNavbar ul {
-  li {
-    display: inline-block;
-    margin-left: 15px;
-    &:first-child {
-      margin-left: 0;
+
+/* Navbar */
+.navbar > .nav-link {
+  margin-left: 15px;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: $black;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  &:hover {
+    color: $red;
+  }
+}
+.d {
+  float: left;
+  overflow: hidden;
+}
+.d .d-btn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: $black;
+  background: inherit;
+  text-transform: uppercase;
+  &:hover {
+    color: $red;
+  }
+}
+.d-content {
+  display: none;
+  position: fixed;
+  background: $white;
+  width: 100%;
+  left: 0;
+  z-index: 10;
+  border-bottom: 5px solid $red;
+  padding-bottom: 15px;
+  min-height: 350px;
+}
+.d:hover .d-content {
+  display: block;
+}
+.d-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+.d-wrapper .d-image {
+  min-width: 300px;
+  max-width: 430px;
+  overflow: hidden;
+  margin-top: 15px;
+  margin-right: 15px;
+  > img {
+    transform: scale(1.2);
+  }
+}
+.column {
+  width: max-content;
+  padding: 0 10px;
+  &:first-child {
+    padding-left: 0;
+  }
+  > h3 {
+    padding: 15px 10px 0;
+    color: $black;
+    font-size: 1.2rem;
+  }
+  > a {
+    display: block;
+    float: none;
+    color: $black;
+    text-align: left;
+    text-transform: capitalize;
+    font-size: 1rem;
+    margin-left: 10px;
+    &:hover {
+      color: $red;
     }
+  }
+  &.gifts > a {
+    padding: 15px 10px 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
   }
 }
