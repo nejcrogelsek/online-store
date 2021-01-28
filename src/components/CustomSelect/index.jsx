@@ -11,10 +11,9 @@ const CustomSelect = ({ values }) => {
 
   return (
     <>
-      <div class='select'>
+      <div className='select'>
         <select
           id='standard-select'
-          value={stateValue}
           onChange={(e) => setStateValue(e.target.value)}>
           {values.map((value) => (
             <option key={value.code} value={value.code}>
