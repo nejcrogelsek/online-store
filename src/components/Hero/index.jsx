@@ -39,16 +39,14 @@ const HeroSection = () => {
   ]);
   return (
     <div id='hero'>
-      <div className='container'>
-        <div className='row'>
-          <div className='col-12 col-lg-8 hero-slider-wrapper'>
-            <HeroSlider />
-            <HeroSliderDots />
-          </div>
-          <div className='col-12 col-lg-4 hero-aside-wrapper'>
-            <HeroBox />
-            <HeroBox />
-          </div>
+      <div className='row'>
+        <div className='col-12 col-lg-8 hero-slider-wrapper'>
+          <HeroSlider />
+          <HeroSliderDots />
+        </div>
+        <div className='col-12 col-lg-4 hero-aside-wrapper'>
+          <HeroBox />
+          <HeroBox />
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { Navbar, Hero } from "./components";
+import { Navbar, Hero, Qualities } from "./components";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
@@ -7,7 +7,10 @@ function App() {
       <Switch>
         <Route exact path='/'>
           <Navbar />
-          <Hero />
+          <div className='container'>
+            <Hero />
+            <Qualities />
+          </div>
         </Route>
       </Switch>
     </Router>
