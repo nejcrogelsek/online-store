@@ -14,12 +14,19 @@ header #topNavbar {
   .call {
     font-size: 0.8125rem;
     padding: 10px 0;
+    display: flex;
+    align-items: center;
+    > svg {
+      width: 16px;
+      height: 16px;
+    }
     > span {
-      margin-left: 15px;
+      margin-left: 10px;
     }
     > a {
       color: #ed2329;
       font-weight: 600;
+      margin-left: 5px;
     }
   }
   .top-links {
@@ -130,6 +137,9 @@ header #middleNavbar > .content .middle-buttons .shopping-cart {
   &:first-child {
     margin-left: 0;
   }
+  &.active {
+    color: $red;
+  }
 }
 .navbar a {
   float: left;
@@ -153,7 +163,11 @@ header #middleNavbar > .content .middle-buttons .shopping-cart {
   color: $black;
   background: inherit;
   text-transform: uppercase;
+  transition: 0.5s;
   &:hover {
+    color: $red;
+  }
+  &.active {
     color: $red;
   }
 }

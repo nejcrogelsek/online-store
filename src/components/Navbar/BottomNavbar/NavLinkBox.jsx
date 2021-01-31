@@ -5,6 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 const NavLinkBox = ({ name, dropdown }) => {
   const [numOfSubcat, setNumOfSubcat] = useState(4);
   const [onHover, setOnHover] = useState(false);
+
   const onEnter = () => {
     setOnHover(true);
   };
@@ -12,6 +13,7 @@ const NavLinkBox = ({ name, dropdown }) => {
   const onLeave = () => {
     setOnHover(false);
   };
+
   return (
     <>
       {dropdown ? (
@@ -19,7 +21,7 @@ const NavLinkBox = ({ name, dropdown }) => {
           className='d nav-link'
           onMouseEnter={onEnter}
           onMouseLeave={onLeave}>
-          <button className='d-btn'>{name}</button>
+          <button className={onHover ? "d-btn active" : "d-btn"}>{name}</button>
           <div className='d-content'>
             <div className='d-wrapper'>
               <div className='column'>

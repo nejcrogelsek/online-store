@@ -3,10 +3,10 @@ import NavLinkBox from "./NavLinkBox";
 
 const BottomNavbar = () => {
   const [testData, setTestData] = useState([
-    { name: "Man", dropdown: false },
+    { name: "Man", dropdown: true },
     { name: "Women", dropdown: false },
     { name: "Furniture", dropdown: false },
-    { name: "Computer equipment", dropdown: false },
+    { name: "Computer equipment", dropdown: true },
     { name: "Accessories", dropdown: false },
     { name: "Other products", dropdown: false },
     { name: "Reduced prices", dropdown: false },

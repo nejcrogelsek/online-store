@@ -1,0 +1,67 @@
+#hero-discounts {
+  background: orange;
+}
+#hero-gifts {
+  background: green;
+}
+#hero {
+  margin-top: 25px;
+}
+.hero-aside-wrapper {
+  display: flex;
+  flex-direction: column;
+  @media #{$tablet} {
+    flex-direction: row;
+  }
+  @media #{$desktop} {
+    flex-direction: column;
+  }
+}
+.hero-box {
+  width: 100%;
+  position: relative;
+  > a:hover {
+    color: $black;
+  }
+  @media #{$tablet} {
+    width: 50%;
+  }
+  @media #{$desktop} {
+    width: 100%;
+  }
+}
+
+#hero-slider.slider-item {
+  position: relative;
+  > a:hover {
+    color: $black;
+  }
+  .slider-text {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    @media #{$tablet} {
+      bottom: 120px;
+    }
+  }
+}
+#hero-slider.slider-item .slider-text {
+  width: 70%;
+  > span {
+    display: block;
+    padding: 15px 15px 15px 30px;
+  }
+  > h2 {
+    font-size: 1.2rem;
+    background-color: $white;
+    color: $black;
+    width: 90%;
+    padding: 15px 15px 15px 30px;
+    margin: 0;
+    border: 1px solid #d4bc84;
+    border-left: none;
+    @media #{$tablet} {
+      font-size: 1.6875rem;
+    }
+  }
+}
