@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NavLinkBox from "./NavLinkBox";
+import NavLinkBox from "./NavLinkBox/NavLinkBox";
 
 const BottomNavbar = () => {
   const [testData, setTestData] = useState([

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Image from "../../../assets/images/1.jpg";
+import Image from "../../../../assets/images/1.jpg";
 import { Link, NavLink } from "react-router-dom";
 
 const NavLinkBox = ({ name, dropdown }) => {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import HeroBox from "./HeroBox";
-import HeroSlider from "./HeroSlider";
+import HeroBox from "./HeroBox/HeroBox";
+import HeroSlider from "./HeroSlider/HeroSlider";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
 const HeroSection = () => {
