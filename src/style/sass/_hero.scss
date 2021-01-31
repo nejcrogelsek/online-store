@@ -113,3 +113,23 @@
     }
   }
 }
+.hero-slider-wrapper {
+  position: relative;
+}
+.hero-slider-wrapper .hero-slider-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+  text-align: center;
+  @media #{$tablet} {
+    bottom: 15px;
+  }
+  > svg {
+    transition: 0.5s;
+    &:hover {
+      color: $gold;
+      cursor: pointer;
+    }
+  }
+}

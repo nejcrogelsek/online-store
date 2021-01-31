@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import HeroBox from "./HeroBox/HeroBox";
 import HeroSlider from "./HeroSlider/HeroSlider";
-import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import HeroSliderDots from "./HeroSliderDots/HeroSliderDots";
 
 const HeroSection = () => {
   // most selling products
@@ -41,8 +41,9 @@ const HeroSection = () => {
     <div id='hero'>
       <div className='container'>
         <div className='row'>
-          <div className='col-12 col-lg-8'>
+          <div className='col-12 col-lg-8 hero-slider-wrapper'>
             <HeroSlider />
+            <HeroSliderDots />
           </div>
           <div className='col-12 col-lg-4 hero-aside-wrapper'>
             <HeroBox />
