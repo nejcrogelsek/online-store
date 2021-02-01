@@ -6,26 +6,28 @@ import ScheduleIcon from "@material-ui/icons/Schedule";
 
 const index = () => {
   return (
-    <div id='qualities'>
-      <div className='quality'>
+    <div id='qualities' className='row'>
+      <div className='col-12 col-md-6 col-lg-3 quality'>
         <PublicIcon />
-        <span>free shipping</span>
-        <span>on order over $500</span>
+        <span className='quality-title'>free shipping</span>
+        <span className='quality-description'>on order over $500</span>
       </div>
-      <div className='quality'>
+      <div className='col-12 col-md-6 col-lg-3 quality'>
         <PeopleOutlineIcon />
-        <span>support</span>
-        <span>life time support 24/7</span>
+        <span className='quality-title'>support</span>
+        <span className='quality-description'>life time support 24/7</span>
       </div>
-      <div className='quality'>
+      <div className='col-12 col-md-6 col-lg-3 quality'>
         <SecurityIcon />
-        <span>safe purchase</span>
-        <span>Never save credit card information</span>
+        <span className='quality-title'>safe purchase</span>
+        <span className='quality-description'>
+          Never save credit card information
+        </span>
       </div>
-      <div className='quality'>
+      <div className='col-12 col-md-6 col-lg-3 quality'>
         <ScheduleIcon />
-        <span>fast delivery</span>
-        <span>on order over $500</span>
+        <span className='quality-title'>fast delivery</span>
+        <span className='quality-description'>on order over $500</span>
       </div>
     </div>
   );

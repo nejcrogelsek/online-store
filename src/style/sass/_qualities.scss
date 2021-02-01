@@ -1,0 +1,57 @@
+#qualities {
+  border: 1px solid $grey;
+  margin: 50px 0;
+  padding: 25px;
+}
+.quality {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0;
+  @media #{$tablet} {
+    &:nth-child(1),
+    &:nth-child(3) {
+      border-right: 1px solid $grey;
+    }
+  }
+  @media #{$desktop} {
+    border-right: 1px solid $grey;
+    &:last-child {
+      border: none;
+    }
+  }
+
+  > .MuiSvgIcon-root {
+    width: 40px;
+    height: 40px;
+  }
+  > span {
+    text-transform: uppercase;
+    text-align: center;
+  }
+  > .quality-title {
+    font-size: 1rem;
+  }
+  > .quality-description {
+    font-size: 0.875rem;
+    width: 200px;
+  }
+}
+.quality {
+  > .MuiSvgIcon-root {
+    width: 40px;
+    height: 40px;
+    color: $red;
+  }
+  > span {
+    text-transform: uppercase;
+  }
+  > .quality-title {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  > .quality-description {
+    font-size: 0.875rem;
+  }
+}
