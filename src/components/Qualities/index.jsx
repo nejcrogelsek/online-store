@@ -4,7 +4,7 @@ import PeopleOutlineIcon from "@material-ui/icons/PeopleOutline";
 import SecurityIcon from "@material-ui/icons/Security";
 import ScheduleIcon from "@material-ui/icons/Schedule";
 
-const index = () => {
+const Qualities = () => {
   return (
     <div id='qualities' className='row'>
       <div className='col-12 col-md-6 col-lg-3 quality'>
@@ -33,4 +33,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Qualities;

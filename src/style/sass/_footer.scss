@@ -1,0 +1,82 @@
+footer {
+  background: $black;
+  padding: 50px 0;
+}
+footer #topFooter .footer-block {
+  h5 {
+    color: $white;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  ul {
+    li {
+      font-size: 0.875rem;
+      > a {
+        color: $white;
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+}
+footer #bottomFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer #bottomFooter .picture {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > span {
+    color: $white;
+    margin-left: 15px;
+    font-size: 1.25rem;
+  }
+}
+footer #bottomFooter .socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  > a {
+    padding: 0 25px;
+    > .MuiSvgIcon-root {
+      color: $white;
+      transition: 0.5s;
+    }
+    &:hover {
+      > .facebook-icon {
+        color: #3b5998;
+      }
+      > .instagram-icon {
+        color: #833ab4;
+      }
+      > .twitter-icon {
+        color: #1da1f2;
+      }
+    }
+  }
+}
+footer #bottomFooter {
+  .authors,
+  .copyright {
+    opacity: 0.44;
+  }
+  .authors {
+    margin-bottom: 5px;
+    color: $white;
+    > span > a {
+      color: $white;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .copyright {
+    color: $white;
+  }
+}
