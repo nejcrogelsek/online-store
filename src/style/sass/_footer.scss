@@ -15,6 +15,7 @@ footer #topFooter .footer-block.openTermsAndConditions {
     }
   }
   @media #{$tablet} {
+    margin-bottom: 10px;
     > h5 {
       color: $white;
       > span > svg {
@@ -48,6 +49,9 @@ footer #topFooter .footer-block > h5 {
   @media #{$tablet} {
     border: none;
     padding-bottom: 0;
+    &:hover {
+      cursor: default;
+    }
     > span {
       display: none;
     }
