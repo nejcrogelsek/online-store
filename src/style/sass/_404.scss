@@ -1,0 +1,32 @@
+#NotFound404 {
+  padding: 100px 0;
+}
+#NotFound404 .content-404 {
+  margin-bottom: 50px;
+  > h2 {
+    font-size: 2.125rem;
+    > span {
+      font-weight: 700;
+    }
+  }
+  > p {
+    margin: 25px 0;
+  }
+  > a {
+    padding: 10px 30px 10px 15px;
+    background: $red;
+    box-shadow: none;
+    border: none;
+    color: $white;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 280px;
+  }
+  @media #{$desktop} {
+    > h2 {
+      font-size: 3.125rem;
+    }
+  }
+}
