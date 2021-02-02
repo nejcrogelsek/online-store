@@ -1,20 +1,54 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/images/logo-icon.svg";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 const Footer = () => {
+  const infoRef = useRef();
+  const customerServiceRef = useRef();
+  const myAccountRef = useRef();
+  const termsAndConditionsRef = useRef();
+  const [info, setInfo] = useState(false);
+  const [customerService, setCustomerService] = useState(false);
+  const [myAccount, setMyAccount] = useState(false);
+  const [termsAndConditions, setTermsAndConditions] = useState(false);
+
+  const openInfo = () => {
+    setInfo(!info);
+  };
+  const openCustomerService = () => {
+    setCustomerService(!customerService);
+  };
+  const openMyAccount = () => {
+    setMyAccount(!myAccount);
+  };
+  const openTermsAndConditions = () => {
+    setTermsAndConditions(!termsAndConditions);
+  };
+
   return (
     <footer id='footer'>
       <div className='container'>
         <div id='topFooter'>
           <div className='row'>
             <div className='col-md-3'>
-              <div className='footer-block'>
-                <h5>Informacije</h5>
-                <ul>
+              <div className={info ? "footer-block openInfo" : "footer-block"}>
+                <h5 onClick={openInfo}>
+                  Informacije{" "}
+                  <span>
+                    <ArrowForwardIosIcon />
+                  </span>
+                </h5>
+                <ul
+                  ref={infoRef}
+                  style={
+                    info
+                      ? { height: infoRef.current.scrollHeight + "px" }
+                      : { height: "0px" }
+                  }>
                   <li>
                     <Link to='/'>Sitemap</Link>
                   </li>
@@ -43,9 +77,28 @@ const Footer = () => {
               </div>
             </div>
             <div className='col-md-3'>
-              <div className='footer-block'>
-                <h5>Customer Service</h5>
-                <ul>
+              <div
+                className={
+                  customerService
+                    ? "footer-block openCustomerService"
+                    : "footer-block"
+                }>
+                <h5 onClick={openCustomerService}>
+                  Customer Service
+                  <span>
+                    <ArrowForwardIosIcon />
+                  </span>
+                </h5>
+                <ul
+                  ref={customerServiceRef}
+                  style={
+                    customerService
+                      ? {
+                          height:
+                            customerServiceRef.current.scrollHeight + "px",
+                        }
+                      : { height: "0px" }
+                  }>
                   <li>
                     <Link to='/'>Search</Link>
                   </li>
@@ -65,9 +118,23 @@ const Footer = () => {
               </div>
             </div>
             <div className='col-md-3'>
-              <div className='footer-block'>
-                <h5>My Account</h5>
-                <ul>
+              <div
+                className={
+                  myAccount ? "footer-block openMyAccount" : "footer-block"
+                }>
+                <h5 onClick={openMyAccount}>
+                  My Account
+                  <span>
+                    <ArrowForwardIosIcon />
+                  </span>
+                </h5>
+                <ul
+                  ref={myAccountRef}
+                  style={
+                    myAccount
+                      ? { height: myAccountRef.current.scrollHeight + "px" }
+                      : null
+                  }>
                   <li>
                     <Link to='/'>My Account</Link>
                   </li>
@@ -90,9 +157,28 @@ const Footer = () => {
               </div>
             </div>
             <div className='col-md-3'>
-              <div className='footer-block'>
-                <h5>General Terms And Conditions</h5>
-                <ul>
+              <div
+                className={
+                  termsAndConditions
+                    ? "footer-block openTermsAndConditions"
+                    : "footer-block"
+                }>
+                <h5 onClick={openTermsAndConditions}>
+                  General Terms And Conditions
+                  <span>
+                    <ArrowForwardIosIcon />
+                  </span>
+                </h5>
+                <ul
+                  ref={termsAndConditionsRef}
+                  style={
+                    termsAndConditions
+                      ? {
+                          height:
+                            termsAndConditionsRef.current.scrollHeight + "px",
+                        }
+                      : { height: "0px" }
+                  }>
                   <li>
                     <Link to='/'>Security regulations</Link>
                   </li>
@@ -110,20 +196,23 @@ const Footer = () => {
             <span>Redpoint</span>
           </div>
           <div className='socials'>
-            <a href='#' target='_blank'>
+            <a href='#' rel='noreferrer' target='_blank'>
               <FacebookIcon className='facebook-icon' />
             </a>
-            <a href='#' target='_blank'>
+            <a href='#' rel='noreferrer' target='_blank'>
               <InstagramIcon className='instagram-icon' />
             </a>
-            <a href='#' target='_blank'>
+            <a href='#' rel='noreferrer' target='_blank'>
               <TwitterIcon className='twitter-icon' />
             </a>
           </div>
           <div className='authors'>
             <span>
               Authors:{" "}
-              <a href='https://nejcrogelsek.si' target='_blank'>
+              <a
+                href='https://nejcrogelsek.si'
+                rel='noreferrer'
+                target='_blank'>
                 Nejc Rogelšek
               </a>
             </span>

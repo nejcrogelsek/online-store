@@ -2,21 +2,70 @@ footer {
   background: $black;
   padding: 50px 0;
 }
-footer #topFooter .footer-block {
-  h5 {
-    color: $white;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    font-weight: 600;
+footer #topFooter .footer-block.openInfo,
+footer #topFooter .footer-block.openCustomerService,
+footer #topFooter .footer-block.openMyAccount,
+footer #topFooter .footer-block.openTermsAndConditions {
+  margin-bottom: 35px;
+  > h5 {
+    color: $red;
+    > span > svg {
+      transform: rotate(90deg);
+      color: $red;
+    }
   }
-  ul {
-    li {
-      font-size: 0.875rem;
-      > a {
+  @media #{$tablet} {
+    > h5 {
+      color: $white;
+      > span > svg {
         color: $white;
-        &:hover {
-          color: $red;
-        }
+      }
+    }
+  }
+}
+footer #topFooter .footer-block {
+  margin-bottom: 10px;
+}
+footer #topFooter .footer-block > h5 {
+  color: $white;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
+  &:hover {
+    cursor: pointer;
+  }
+  > span > svg {
+    transition: 0.5s;
+    width: 18px;
+    height: 18px;
+  }
+  @media #{$tablet} {
+    border: none;
+    padding-bottom: 0;
+    > span {
+      display: none;
+    }
+  }
+}
+footer #topFooter .footer-block > ul {
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  @media #{$tablet} {
+    height: auto !important;
+  }
+  li {
+    font-size: 0.875rem;
+    > a {
+      color: $white;
+      &:hover {
+        color: $red;
       }
     }
   }
