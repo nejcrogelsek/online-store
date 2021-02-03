@@ -1,4 +1,4 @@
-import { Navbar, Hero, Qualities, Footer, NotFound404 } from "./components";
+import { Navbar, Hero, Qualities, Footer, NotFound404,ManufacturersHomePage } from "./components";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
@@ -9,6 +9,7 @@ function App() {
           <Navbar />
           <div className='container'>
             <Hero />
+            <ManufacturersHomePage />
             <Qualities />
           </div>
           <Footer />
