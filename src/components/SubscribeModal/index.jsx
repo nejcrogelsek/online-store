@@ -3,6 +3,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import Image from "../../assets/images/subscribe-email.png";
+import CloseIcon from "@material-ui/icons/Close";
 
 const SubscribeModal = () => {
   const [email, setEmail] = useState("");
@@ -15,6 +16,9 @@ const SubscribeModal = () => {
   return (
     <div id='subscribe-modal'>
       <div className='subscribe-wrapper'>
+        <button className='close-subscribe-modal'>
+          <CloseIcon />
+        </button>
         <div className='content'>
           <h3>Join Our Mailing List</h3>
           <p className='first'>
