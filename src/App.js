@@ -1,6 +1,14 @@
-import { Navbar, Hero, Qualities, Footer, NotFound404,ManufacturersHomePage } from "./components";
-
+import {
+  Navbar,
+  Hero,
+  Qualities,
+  Footer,
+  NotFound404,
+  ManufacturersHomePage,
+  SubscribeModal,
+} from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 function App() {
   return (
     <Router>
@@ -13,6 +21,7 @@ function App() {
             <Qualities />
           </div>
           <Footer />
+          <SubscribeModal />
         </Route>
         <Route exact path='/404-Not-Found'>
           <Navbar />

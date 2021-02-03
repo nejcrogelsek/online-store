@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Image from "../../../assets/images/1.jpg";
 
 const HeroBox = () => {
   return (
@@ -9,10 +10,7 @@ const HeroBox = () => {
           <h2>Accessories</h2>
         </div>
         <div className='box-image'>
-          <img
-            src='https://www.evitas.si/images/thumbs/0098045.jpeg'
-            alt='title'
-          />
+          <img src={Image} alt='title' />
         </div>
       </Link>
     </div>

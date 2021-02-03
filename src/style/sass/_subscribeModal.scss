@@ -1,0 +1,125 @@
+#subscribe-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background-color: rgba($color: $black, $alpha: 0.5);
+}
+#subscribe-modal .subscribe-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: $white;
+  @media #{$tablet} {
+    flex-direction: row;
+  }
+}
+#subscribe-modal .subscribe-wrapper > .content {
+  padding: 25px 15px;
+  @media #{$desktop} {
+    padding: 25px 50px;
+  }
+  > h3 {
+    font-weight: 700;
+    text-align: center;
+    @media #{$tablet} {
+      text-align: left;
+    }
+  }
+  > p {
+    text-align: center;
+    @media #{$tablet} {
+      text-align: left;
+    }
+  }
+  > p.first {
+    font-weight: 300;
+    line-height: 18px;
+    margin: 10px 0;
+  }
+  > p.second {
+    font-weight: 500;
+    margin: 10px auto;
+    max-width: 320px;
+    font-size: 0.8rem;
+    @media #{$tablet} {
+      margin: 10px 0;
+    }
+  }
+  > form {
+    text-align: center;
+    @media #{$mobile} {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      > input {
+        flex: 1;
+        outline: none;
+        border: 1px solid $grey;
+      }
+      > button {
+        margin: 0 !important;
+        line-height: 32px;
+      }
+    }
+    > input {
+      height: 32px;
+      line-height: 32px;
+      padding: 2px 0;
+      padding-left: 5px;
+      width: 100%;
+    }
+    > button {
+      width: max-content;
+      margin: 10px 0 0;
+      border: none;
+      padding: 0px 30px;
+      height: 32px;
+      background: $red;
+      color: $white;
+      &:hover {
+        cursor: pointer;
+        background: $redDark;
+      }
+      &:disabled {
+        background: $red;
+        cursor: not-allowed;
+        opacity: 0.8;
+      }
+    }
+  }
+  > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media #{$tablet} {
+      justify-content: flex-start;
+    }
+    > li {
+      margin-left: 15px;
+      &:first-child {
+        margin-left: 0;
+      }
+      > a {
+        transition: none;
+      }
+    }
+  }
+}
+#subscribe-modal .subscribe-wrapper > .picture {
+  width: 100%;
+  text-align: center;
+  background-color: #f8f8f8;
+  @media #{$tablet} {
+    width: auto;
+  }
+}
