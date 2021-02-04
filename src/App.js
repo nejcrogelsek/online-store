@@ -8,8 +8,15 @@ import {
   SubscribeModal,
 } from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    setShowModal(true)
+  }, [])
+
   return (
     <Router>
       <Switch>
@@ -21,7 +28,7 @@ function App() {
             <Qualities />
           </div>
           <Footer />
-          <SubscribeModal />
+          {showModal ? <SubscribeModal showModal={showModal} setShowModal={setShowModal} /> : null}
         </Route>
         <Route exact path='/404-Not-Found'>
           <Navbar />

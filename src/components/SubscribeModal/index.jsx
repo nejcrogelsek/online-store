@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import Image from "../../assets/images/subscribe-email.png";
 import CloseIcon from "@material-ui/icons/Close";
 
-const SubscribeModal = () => {
+const SubscribeModal = ({ showModal, setShowModal }) => {
   const [email, setEmail] = useState("");
 
   const addNewMember = (e) => {
@@ -13,10 +13,28 @@ const SubscribeModal = () => {
     console.log("New member added");
   };
 
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  const keyPress = useCallback(
+    (e) => {
+      if (e.key === "Escape" && showModal) {
+        setShowModal(false);
+      }
+    },
+    [setShowModal, showModal]
+  );
+
+  useEffect(() => {
+    document.addEventListener("keydown", keyPress);
+    return () => document.removeEventListener("keydown", keyPress);
+  }, [keyPress]);
+
   return (
     <div id='subscribe-modal'>
       <div className='subscribe-wrapper'>
-        <button className='close-subscribe-modal'>
+        <button className='close-subscribe-modal' onClick={closeModal}>
           <CloseIcon />
         </button>
         <div className='content'>
