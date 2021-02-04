@@ -6,6 +6,7 @@ import {
   NotFound404,
   ManufacturersHomePage,
   SubscribeModal,
+  InstagramEmbed,
 } from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -26,6 +27,7 @@ function App() {
             <Hero />
             <Qualities />
             <ManufacturersHomePage />
+            <InstagramEmbed />
           </div>
           <Footer />
           {showModal ? (

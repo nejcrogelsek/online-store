@@ -5,3 +5,4 @@ export { default as Footer } from "./Footer";
 export { default as NotFound404 } from "./404";
 export { default as ManufacturersHomePage } from "./Manufacturers/HomePage";
 export { default as SubscribeModal } from "./SubscribeModal";
+export { default as InstagramEmbed } from "./InstagramEmbed";
