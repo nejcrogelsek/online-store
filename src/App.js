@@ -14,8 +14,8 @@ function App() {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    setShowModal(true)
-  }, [])
+    setShowModal(true);
+  }, []);
 
   return (
     <Router>
@@ -24,11 +24,13 @@ function App() {
           <Navbar />
           <div className='container'>
             <Hero />
-            <ManufacturersHomePage />
             <Qualities />
+            <ManufacturersHomePage />
           </div>
           <Footer />
-          {showModal ? <SubscribeModal showModal={showModal} setShowModal={setShowModal} /> : null}
+          {showModal ? (
+            <SubscribeModal showModal={showModal} setShowModal={setShowModal} />
+          ) : null}
         </Route>
         <Route exact path='/404-Not-Found'>
           <Navbar />
