@@ -39,6 +39,13 @@ function App() {
           </div>
           <Footer />
         </Route>
+        <Route path='*'>
+          <Navbar />
+          <div className='container'>
+            <NotFound404 />
+          </div>
+          <Footer />
+        </Route>
       </Switch>
     </Router>
   );
