@@ -7,6 +7,7 @@ import {
   ManufacturersHomePage,
   SubscribeModal,
   InstagramEmbed,
+  ProductsSection,
 } from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -26,6 +27,7 @@ function App() {
           <div className='container'>
             <Hero />
             <Qualities />
+            <ProductsSection />
             <ManufacturersHomePage />
             <InstagramEmbed />
           </div>
