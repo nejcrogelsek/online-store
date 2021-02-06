@@ -7,7 +7,9 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 const ProductsSection = () => {
   const catRef = useRef();
+  const subCatRef = useRef();
   const [mobileCat, setMobileCat] = useState(false);
+  const [mobileSubCat, setMobileSubCat] = useState(false);
 
   const [category, setCategory] = useState("");
   const [categories, setCategories] = useState([
@@ -101,8 +103,22 @@ const ProductsSection = () => {
           </ul>
         </div>
         <div className='ps-bottom'>
+          <button
+            onClick={() => setMobileSubCat(!mobileSubCat)}
+            className={
+              mobileSubCat ? "ps-mobile-subcat active" : "ps-mobile-subcat"
+            }>
+            SubCategories <ArrowForwardIosIcon />
+          </button>
           <div className='ps-sub-cat-wrapper'>
-            <ul className='ps-sub-cat-list'>
+            <ul
+              className='ps-sub-cat-list'
+              ref={subCatRef}
+              style={
+                mobileSubCat
+                  ? { height: subCatRef.current.scrollHeight + "px" }
+                  : { height: "0px" }
+              }>
               {subCategories.map(({ id, title }) => (
                 <li key={id}>
                   <span onClick={() => changeSubCategory(title)}>{title}</span>
