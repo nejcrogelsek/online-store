@@ -1,10 +1,14 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import ImportantDevicesIcon from "@material-ui/icons/ImportantDevices";
 import ProductBox from "./ProductBox/ProductBox";
 import MainImage from "../../assets/images/camera.jpg";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 const ProductsSection = () => {
+  const catRef = useRef();
+  const [mobileCat, setMobileCat] = useState(false);
+
   const [category, setCategory] = useState("");
   const [categories, setCategories] = useState([
     { id: 1, title: "Man" },
@@ -72,11 +76,23 @@ const ProductsSection = () => {
     <div id='products-section'>
       <div className='ps-wrapper'>
         <div className='ps-top'>
-          <span>
+          <span className='ps-active-category'>
             <ImportantDevicesIcon />
-            {category}
+            <span>{category}</span>
           </span>
-          <ul className='ps-cat-list'>
+          <button
+            onClick={() => setMobileCat(!mobileCat)}
+            className={mobileCat ? "ps-mobile-cat active" : "ps-mobile-cat"}>
+            Categories <ArrowForwardIosIcon />
+          </button>
+          <ul
+            className='ps-cat-list'
+            ref={catRef}
+            style={
+              mobileCat
+                ? { height: catRef.current.scrollHeight + "px" }
+                : { height: "0px" }
+            }>
             {categories.map(({ id, title }) => (
               <li key={id}>
                 <span onClick={() => changeCategory(title)}>{title}</span>

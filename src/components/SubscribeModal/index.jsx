@@ -44,7 +44,7 @@ const SubscribeModal = ({ showModal, setShowModal }) => {
           </p>
           <form onSubmit={addNewMember}>
             <input
-              type='text'
+              type='email'
               name='member-email'
               id='memberEmailInput'
               value={email}

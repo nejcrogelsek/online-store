@@ -1,0 +1,109 @@
+#products-section .ps-wrapper .ps-top {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid $grey;
+  overflow: hidden;
+  @media #{$desktop} {
+    flex-direction: row;
+    height: 55px;
+  }
+}
+#products-section .ps-wrapper .ps-top .ps-active-category {
+  display: inline-block;
+  width: 100%;
+  height: 55px;
+  background-color: $red;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 18px;
+  color: $white;
+  > span {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-left: 25px;
+  }
+  > svg.MuiSvgIcon-root {
+    transform: scale(1.3);
+  }
+  @media #{$desktop} {
+    width: 200px;
+    clip-path: polygon(90% 0, 100% 50%, 90% 100%, 0 100%, 0 0);
+    padding-left: 25px;
+  }
+}
+#products-section .ps-wrapper .ps-top .ps-mobile-cat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+  width: 100%;
+  border: none;
+  background: $white;
+  color: $black;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: left;
+  padding: 0 15px;
+  transition: 0.5s;
+  > svg.MuiSvgIcon-root {
+    transform: rotate(0);
+    transition: 0.5s;
+  }
+  &:hover {
+    color: $red;
+  }
+  &.active {
+    > svg.MuiSvgIcon-root {
+      transform: rotate(90deg);
+    }
+  }
+  @media #{$desktop} {
+    display: none;
+  }
+}
+#products-section .ps-wrapper .ps-top .ps-cat-list {
+  transition: 0.5s;
+  width: 100%;
+  @media #{$desktop} {
+    display: block;
+    width: max-content;
+    height: auto !important;
+  }
+  > li {
+    display: block;
+    padding: 10px 20px;
+    color: $black;
+    > span {
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: 0.5s;
+      &:hover {
+        cursor: pointer;
+        color: $red;
+      }
+    }
+    @media #{$desktop} {
+      display: inline-block;
+      border-right: 1px solid $grey;
+      padding: 0 20px;
+    }
+  }
+}
+#products-section .ps-wrapper .ps-bottom {
+  display: flex;
+  flex-wrap: wrap;
+}
+#products-section .ps-wrapper .ps-bottom > .ps-sub-cat-wrapper {
+  width: 20%;
+}
+#products-section .ps-wrapper .ps-bottom > .ps-main-picture {
+  width: 40%;
+}
+#products-section .ps-wrapper .ps-bottom > .ps-products-wrapper {
+  width: 40%;
+}
