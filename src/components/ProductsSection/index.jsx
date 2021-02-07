@@ -102,7 +102,7 @@ const ProductsSection = () => {
             ))}
           </ul>
         </div>
-        <div className='ps-bottom'>
+        <div className='ps-middle'>
           <button
             onClick={() => setMobileSubCat(!mobileSubCat)}
             className={
@@ -112,7 +112,9 @@ const ProductsSection = () => {
           </button>
           <div className='ps-sub-cat-wrapper'>
             <ul
-              className='ps-sub-cat-list'
+              className={
+                mobileSubCat ? "ps-sub-cat-list bordernull" : "ps-sub-cat-list"
+              }
               ref={subCatRef}
               style={
                 mobileSubCat
@@ -130,12 +132,13 @@ const ProductsSection = () => {
             <img src={MainImage} alt='Main image' />
           </div>
           <div className='ps-products-wrapper'>
-            {products.map(({ id, title, old_price, price }) => (
+            {products.map(({ id, title, old_price, price, image_url }) => (
               <ProductBox
                 key={id}
                 title={title}
                 old_price={old_price}
                 price={price}
+                image_url={image_url}
               />
             ))}
           </div>
