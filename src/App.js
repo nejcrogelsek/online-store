@@ -28,8 +28,9 @@ function App() {
             <Hero />
             <Qualities />
             <ProductsSection />
-            <ManufacturersHomePage />
             <InstagramEmbed />
+            <ProductsSection />
+            <ManufacturersHomePage />
           </div>
           <Footer />
           {showModal ? (
