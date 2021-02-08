@@ -5,7 +5,7 @@ import { cat_subcat_select } from "../../../features/cat_subcat/cat_subcatSlice"
 
 const BottomNavbar = () => {
   const cat_subcat_selector = useSelector(cat_subcat_select);
-  const [isDesktop, setIsDesktop] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   return (
     <nav className='navbar' id='bottomNavbar'>

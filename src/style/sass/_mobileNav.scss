@@ -1,0 +1,38 @@
+#mobileLayer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: calc(100% - 320px);
+  height: 100%;
+  background: rgba($color: #000000, $alpha: 0.6);
+  z-index: 9999;
+  display: none;
+}
+#mobileNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  max-width: 320px;
+  background: $white;
+  height: 100%;
+  transition: 0.5s ease-in-out;
+  transform: translateX(-100%);
+  &.mobileNav-active {
+    transform: translateX(0);
+  }
+}
+#mobileNav .mn-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  > svg {
+    margin-right: 15px;
+    cursor: pointer;
+  }
+}
+.mn-sublist {
+  display: none;
+}

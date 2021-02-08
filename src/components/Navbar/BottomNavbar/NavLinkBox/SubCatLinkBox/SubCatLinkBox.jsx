@@ -7,7 +7,7 @@ const SubCatLinkBox = ({ title, subcat }) => {
     <div className='column'>
       <h3>{title}</h3>
       {subcat.map(({ subcat_name }) => (
-        <Link key={uuidv4()} to='#'>
+        <Link key={uuidv4()} to='/'>
           {subcat_name}
         </Link>
       ))}
