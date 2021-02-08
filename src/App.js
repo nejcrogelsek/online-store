@@ -11,6 +11,7 @@ import {
 } from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Counter } from "./features/counter/Counter";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -23,6 +24,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path='/'>
+          <Counter />
           <Navbar />
           <div className='container'>
             <Hero />
