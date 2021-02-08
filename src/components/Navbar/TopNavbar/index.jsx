@@ -16,7 +16,6 @@ const TopNavbar = () => {
     { code: "USD", name: "United States Dollars" },
     { code: "JP", name: "Jen" },
   ]);
-  console.log(languages);
   return (
     <div id='topNavbar'>
       <div className='call'>

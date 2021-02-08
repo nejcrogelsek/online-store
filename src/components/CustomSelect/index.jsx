@@ -6,7 +6,6 @@ const CustomSelect = ({ values }) => {
 
   useEffect(() => {
     setStateValue(values[0].code);
-    console.log(values);
   }, []);
 
   return (

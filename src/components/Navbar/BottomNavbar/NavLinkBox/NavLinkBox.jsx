@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "../../../../assets/images/1.jpg";
 import { Link, NavLink } from "react-router-dom";
+import SubCatLinkBox from "./SubCatLinkBox/SubCatLinkBox";
 
-const NavLinkBox = ({ name, dropdown }) => {
+const NavLinkBox = ({ name, dropdown, subcat }) => {
   const [numOfSubcat, setNumOfSubcat] = useState(4);
   const [onHover, setOnHover] = useState(false);
+
+  useEffect(() => {
+    console.log(name);
+    console.log(subcat);
+  }, []);
 
   const onEnter = () => {
     setOnHover(true);
@@ -24,39 +30,9 @@ const NavLinkBox = ({ name, dropdown }) => {
           <button className={onHover ? "d-btn active" : "d-btn"}>{name}</button>
           <div className='d-content'>
             <div className='d-wrapper'>
-              <div className='column'>
-                <h3>Category 1</h3>
-                <Link to='#'>Link 1</Link>
-                <Link to='#'>Link 2</Link>
-                <Link to='#'>Link 3</Link>
-              </div>
-              <div className='column'>
-                <h3>Category 2</h3>
-                <Link to='#'>Link 1</Link>
-                <Link to='#'>Link 2</Link>
-                <Link to='#'>Link 3</Link>
-                <Link to='#'>Link 3</Link>
-                <Link to='#'>Link 4</Link>
-                <Link to='#'>Link 6</Link>
-                <Link to='#'>Link 7</Link>
-                <Link to='#'>Link 8</Link>
-              </div>
-              <div className='column'>
-                <h3>Ženska oblačila</h3>
-                <Link to='#'>Link 1</Link>
-                <Link to='#'>Link 2</Link>
-                <Link to='#'>Link 3</Link>
-                <Link to='#'>Link 4</Link>
-              </div>
-              <div className='column'>
-                <h3>Ženska Snowboard oprema</h3>
-                <Link to='#'>Link 1</Link>
-                <Link to='#'>Link 2</Link>
-                <Link to='#'>Link 3</Link>
-                <Link to='#'>Link 4</Link>
-                <Link to='#'>Link 5</Link>
-                <Link to='#'>Link 6</Link>
-              </div>
+              {subcat.map(({ title, inner_subcat }) => (
+                <SubCatLinkBox key={name} title={title} subcat={inner_subcat} />
+              ))}
               <div className='column gifts'>
                 <Link to='/gifts'>Gifts</Link>
               </div>
