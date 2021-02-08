@@ -3,7 +3,7 @@ import NavLinkBox from "./NavLinkBox/NavLinkBox";
 import MenuIcon from "@material-ui/icons/Menu";
 
 const BottomNavbar = () => {
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(true);
 
   const [testData, setTestData] = useState([
     {
