@@ -3,7 +3,7 @@ import NavLinkBox from "./NavLinkBox/NavLinkBox";
 import MenuIcon from "@material-ui/icons/Menu";
 
 const BottomNavbar = () => {
-  const [isMobile, setIsMobile] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   const [testData, setTestData] = useState([
     {
@@ -228,9 +228,7 @@ const BottomNavbar = () => {
 
   return (
     <nav className='navbar' id='bottomNavbar'>
-      {isMobile ? (
-        <MenuIcon className='navbar-hamburger' />
-      ) : (
+      {isDesktop && (
         <>
           {testData.map(({ name, dropdown, subcat }) => (
             <NavLinkBox

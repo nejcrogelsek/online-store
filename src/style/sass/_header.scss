@@ -80,6 +80,9 @@ header #middleNavbar > .content {
   .middle-buttons {
     display: flex;
     align-items: center;
+    > .cart-button:hover {
+      color: $black;
+    }
     > svg {
       margin-right: 15px;
     }

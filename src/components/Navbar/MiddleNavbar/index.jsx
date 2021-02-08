@@ -3,10 +3,11 @@ import Logo from "../../../assets/images/logo.svg";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import SearchIcon from "@material-ui/icons/Search";
 import MenuIcon from "@material-ui/icons/Menu";
+import { Link } from "react-router-dom";
 
 const MiddleNavbar = () => {
   const [search, setSearch] = useState("");
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
   const startSearch = () => {
     setIsMobile(!isMobile);
@@ -40,10 +41,12 @@ const MiddleNavbar = () => {
         )}
         <div className='middle-buttons'>
           {isMobile && <SearchIcon />}
-          <div className='shopping-cart'>
-            <ShoppingCartOutlinedIcon />
-            <span>0</span>
-          </div>
+          <Link to='/cart' className='cart-button'>
+            <div className='shopping-cart'>
+              <ShoppingCartOutlinedIcon />
+              <span>0</span>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
