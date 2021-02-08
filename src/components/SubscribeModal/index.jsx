@@ -62,17 +62,23 @@ const SubscribeModal = ({ showModal, setShowModal }) => {
           </p>
           <ul>
             <li>
-              <a href='#' rel='noreferrer' target='_blank'>
+              <a
+                href='https://www.facebook.com/'
+                rel='noreferrer'
+                target='_blank'>
                 <FacebookIcon />
               </a>
             </li>
             <li>
-              <a href='#' rel='noreferrer' target='_blank'>
+              <a
+                href='https://www.facebook.com/'
+                rel='noreferrer'
+                target='_blank'>
                 <InstagramIcon />
               </a>
             </li>
             <li>
-              <a href='#' rel='noreferrer' target='_blank'>
+              <a href='https://twitter.com/' rel='noreferrer' target='_blank'>
                 <TwitterIcon />
               </a>
             </li>

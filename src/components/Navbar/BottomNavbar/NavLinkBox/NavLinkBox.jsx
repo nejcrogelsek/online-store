@@ -1,16 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "../../../../assets/images/1.jpg";
 import { Link, NavLink } from "react-router-dom";
 import SubCatLinkBox from "./SubCatLinkBox/SubCatLinkBox";
+import { v4 as uuidv4 } from "uuid";
 
 const NavLinkBox = ({ name, dropdown, subcat }) => {
   const [numOfSubcat, setNumOfSubcat] = useState(4);
   const [onHover, setOnHover] = useState(false);
-
-  useEffect(() => {
-    console.log(name);
-    console.log(subcat);
-  }, []);
 
   const onEnter = () => {
     setOnHover(true);
@@ -31,7 +27,11 @@ const NavLinkBox = ({ name, dropdown, subcat }) => {
           <div className='d-content'>
             <div className='d-wrapper'>
               {subcat.map(({ title, inner_subcat }) => (
-                <SubCatLinkBox key={name} title={title} subcat={inner_subcat} />
+                <SubCatLinkBox
+                  key={uuidv4()}
+                  title={title}
+                  subcat={inner_subcat}
+                />
               ))}
               <div className='column gifts'>
                 <Link to='/gifts'>Gifts</Link>
