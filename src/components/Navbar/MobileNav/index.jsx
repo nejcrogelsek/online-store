@@ -36,7 +36,9 @@ const MobileNav = ({ showMobileNav, setShowMobileNav }) => {
               />
             ))}
             <li className='mn-sublist-item'>
-              <Link to='/gifts'>Gifts</Link>
+              <Link className='mn-item' to='/gifts'>
+                Gifts
+              </Link>
             </li>
           </ul>
         </div>
