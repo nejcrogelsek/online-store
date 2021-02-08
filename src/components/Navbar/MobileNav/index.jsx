@@ -43,7 +43,9 @@ const MobileNav = ({ showMobileNav, setShowMobileNav }) => {
           </ul>
         </div>
       </div>
-      <div id='mobileLayer'></div>
+      <div
+        id='mobileLayer'
+        className={showMobileNav && "mobileLayer-active"}></div>
     </>
   );
 };

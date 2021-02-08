@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
@@ -6,23 +6,25 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import MobileSubCatLinks from "./MobileSubCatLinks/MobileSubCatLinks";
 
 const MobileSubCatLinkBox = ({ subcatTitle, inner_subcat, name }) => {
-  return (
-    <li className='mn-sublist-item'>
-      <div className='parentCat'>
-        <ChevronLeftIcon />
-        {name}
-      </div>
+  const [openSubCat, setOpenSubCat] = useState(false);
 
+  const toggleSubCat = () => {
+    setOpenSubCat(!openSubCat);
+  };
+  return (
+    <li className='mn-item'>
       <Link className='nav-link' to='/category/neki'>
         {subcatTitle}
       </Link>
-      <div className='mn-sublist-toggle'>
+      <div className='mn-sublist-toggle' onClick={toggleSubCat}>
         <ChevronRightIcon />
       </div>
-      <ul className='mn-sublist'>
+      <ul className={openSubCat ? "mn-list active" : "mn-list"}>
         <div className='parentCat'>
-          <ChevronLeftIcon />
-          {subcatTitle}
+          <div className='mn-sublist-toggle' onClick={toggleSubCat}>
+            <ChevronLeftIcon />
+          </div>
+          <span>{subcatTitle}</span>
         </div>
         {inner_subcat.map(({ subcat_name }) => (
           <MobileSubCatLinks
