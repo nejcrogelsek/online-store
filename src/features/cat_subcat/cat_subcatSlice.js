@@ -10,6 +10,7 @@ export const cat_subcatSlice = createSlice({
         subcat: [
           {
             title: "Man Shoes",
+            inner_dropdown: true,
             inner_subcat: [
               {
                 subcat_name: "shoes1",
@@ -27,6 +28,7 @@ export const cat_subcatSlice = createSlice({
           },
           {
             title: "Man Clothes",
+            inner_dropdown: true,
             inner_subcat: [
               {
                 subcat_name: "clothes1",
@@ -44,6 +46,7 @@ export const cat_subcatSlice = createSlice({
           },
           {
             title: "Man Underwear",
+            inner_dropdown: false,
             inner_subcat: [
               {
                 subcat_name: "underwear1",
@@ -61,6 +64,7 @@ export const cat_subcatSlice = createSlice({
           },
           {
             title: "Other",
+            inner_dropdown: true,
             inner_subcat: [
               {
                 subcat_name: "Watches",
@@ -81,6 +85,7 @@ export const cat_subcatSlice = createSlice({
         subcat: [
           {
             title: "Women Shoes",
+            inner_dropdown: true,
             inner_subcat: [
               {
                 subcat_name: "shoes1",
@@ -98,6 +103,7 @@ export const cat_subcatSlice = createSlice({
           },
           {
             title: "Women Clothes",
+            inner_dropdown: false,
             inner_subcat: [
               {
                 subcat_name: "clothes1",
@@ -115,6 +121,7 @@ export const cat_subcatSlice = createSlice({
           },
           {
             title: "Women Underwear",
+            inner_dropdown: false,
             inner_subcat: [
               {
                 subcat_name: "underwear1",
@@ -132,6 +139,7 @@ export const cat_subcatSlice = createSlice({
           },
           {
             title: "Other",
+            inner_dropdown: true,
             inner_subcat: [
               {
                 subcat_name: "Watches",
@@ -157,6 +165,7 @@ export const cat_subcatSlice = createSlice({
         subcat: [
           {
             title: "main1",
+            inner_dropdown: false,
             inner_subcat: [
               {
                 subcat_name: "krneki1",
@@ -174,6 +183,7 @@ export const cat_subcatSlice = createSlice({
           },
           {
             title: "main2",
+            inner_dropdown: true,
             inner_subcat: [
               {
                 subcat_name: "krneki1",
@@ -191,6 +201,7 @@ export const cat_subcatSlice = createSlice({
           },
           {
             title: "main3",
+            inner_dropdown: false,
             inner_subcat: [
               {
                 subcat_name: "krneki1",
@@ -208,6 +219,7 @@ export const cat_subcatSlice = createSlice({
           },
           {
             title: "main4",
+            inner_dropdown: true,
             inner_subcat: [
               {
                 subcat_name: "krneki1",

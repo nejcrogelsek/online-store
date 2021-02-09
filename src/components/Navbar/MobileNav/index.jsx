@@ -15,7 +15,7 @@ const MobileNav = ({ showMobileNav, setShowMobileNav }) => {
 
   return (
     <>
-      <div id='mobileNav' className={showMobileNav && "mobileNav-active"}>
+      <div id='mobileNav' className={showMobileNav ? "mobileNav-active" : null}>
         <div className='mn-top'>
           <div className='logo'>
             <img src={Logo} alt='Logo' />
@@ -45,7 +45,7 @@ const MobileNav = ({ showMobileNav, setShowMobileNav }) => {
       </div>
       <div
         id='mobileLayer'
-        className={showMobileNav && "mobileLayer-active"}></div>
+        className={showMobileNav ? "mobileLayer-active" : null}></div>
     </>
   );
 };

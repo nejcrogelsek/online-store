@@ -28,12 +28,12 @@ const MobileNavLinkBox = ({ name, dropdown, subcat }) => {
               </div>
               <span>{name}</span>
             </li>
-            {subcat.map(({ title, inner_subcat }) => (
+            {subcat.map(({ title, inner_dropdown, inner_subcat }) => (
               <MobileSubCatLinkBox
                 key={uuidv4()}
                 subcatTitle={title}
+                dropdown={inner_dropdown}
                 inner_subcat={inner_subcat}
-                name={name}
               />
             ))}
           </ul>
