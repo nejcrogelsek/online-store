@@ -1,21 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../../../assets/images/logo.svg";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
-import SearchIcon from "@material-ui/icons/Search";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Link } from "react-router-dom";
 import MobileNav from "../MobileNav";
+import Autocomplete from "../Autocomplete";
 
 const MiddleNavbar = () => {
-  const [search, setSearch] = useState("");
-  const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [openSearch, setOpenSearch] = useState(false);
 
-  const startSearch = () => {
-    console.log("SEARCH FUNCTION");
-    setIsMobile(!isMobile);
+  const checkIfMobile = () => {
+    if (window.innerWidth > 991) {
+      setIsMobile(false);
+    } else {
+      setIsMobile(true);
+    }
   };
+
+  useEffect(() => {
+    if (window.innerWidth > 991) {
+      setIsMobile(false);
+    } else {
+      setIsMobile(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", checkIfMobile);
+    return () => {
+      window.removeEventListener("resize", checkIfMobile);
+    };
+  }, []);
 
   const toggleMobileNavigation = () => {
     setShowMobileNav(!showMobileNav);
@@ -32,48 +49,19 @@ const MiddleNavbar = () => {
               <MenuIcon onClick={toggleMobileNavigation} />
             </div>
           ) : (
-            <div className='search-box'>
-              <div className='search-box-wrapper'>
-                <input
-                  type='text'
-                  name='search'
-                  id='search'
-                  value={search}
-                  placeholder='Search...'
-                  onChange={(e) => setSearch(e.target.value)}
-                />
-                <button type='submit' onClick={startSearch}>
-                  Search
-                </button>
-              </div>
-            </div>
+            <Autocomplete
+              openSearch={openSearch}
+              setOpenSearch={setOpenSearch}
+              isMobile={isMobile}
+            />
           )}
           <div className='middle-buttons'>
             {isMobile && (
-              <>
-                <SearchIcon onClick={(e) => setOpenSearch(!openSearch)} />
-                <div
-                  className={
-                    openSearch
-                      ? "search-box sb-mobile active"
-                      : "search-box sb-mobile"
-                  }>
-                  <div className='search-box-wrapper'>
-                    <input
-                      type='text'
-                      name='search'
-                      id='search'
-                      value={search}
-                      placeholder='Search...'
-                      onChange={(e) => setSearch(e.target.value)}
-                    />
-                    <button type='submit' onClick={startSearch}>
-                      Search
-                    </button>
-                  </div>
-                  <div className='search-autocomplete'></div>
-                </div>
-              </>
+              <Autocomplete
+                openSearch={openSearch}
+                setOpenSearch={setOpenSearch}
+                isMobile={isMobile}
+              />
             )}
             <Link to='/cart' className='cart-button'>
               <div className='shopping-cart'>

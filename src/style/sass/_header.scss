@@ -125,7 +125,7 @@ header #middleNavbar > .content .search-box.sb-mobile {
   z-index: 100;
   transition: 0.5s;
   @media (min-width: 350px) {
-    min-height: 320px;
+    min-width: 320px;
   }
   @media #{$tablet} {
     width: 500px;
