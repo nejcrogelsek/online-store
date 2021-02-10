@@ -13,9 +13,9 @@ const Qualities = () => {
         <span className='quality-description'>on order over $500</span>
       </div>
       <div className='col-12 col-md-6 col-lg-3 quality'>
-        <PeopleOutlineIcon />
-        <span className='quality-title'>support</span>
-        <span className='quality-description'>life time support 24/7</span>
+        <ScheduleIcon />
+        <span className='quality-title'>fast delivery</span>
+        <span className='quality-description'>on order over $500</span>
       </div>
       <div className='col-12 col-md-6 col-lg-3 quality'>
         <SecurityIcon />
@@ -25,9 +25,9 @@ const Qualities = () => {
         </span>
       </div>
       <div className='col-12 col-md-6 col-lg-3 quality'>
-        <ScheduleIcon />
-        <span className='quality-title'>fast delivery</span>
-        <span className='quality-description'>on order over $500</span>
+        <PeopleOutlineIcon />
+        <span className='quality-title'>support</span>
+        <span className='quality-description'>life time support 24/7</span>
       </div>
     </div>
   );

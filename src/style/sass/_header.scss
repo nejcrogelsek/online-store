@@ -117,6 +117,39 @@ header #middleNavbar > .content .search-box {
     }
   }
 }
+header #middleNavbar > .content .search-box.sb-mobile {
+  position: fixed;
+  left: calc(50% - 145px);
+  top: -10%;
+  min-width: 290px;
+  z-index: 100;
+  transition: 0.5s;
+  @media (min-width: 350px) {
+    min-height: 320px;
+  }
+  @media #{$tablet} {
+    width: 500px;
+    left: calc(50% - 250px);
+  }
+  > .search-box-wrapper {
+    width: 100%;
+    > input {
+      width: 75%;
+      height: 40px;
+    }
+    > button {
+      width: 25%;
+      height: 40px;
+    }
+  }
+  &.active {
+    top: 11%;
+    @media #{$tablet} {
+      top: 12%;
+    }
+  }
+}
+
 header #middleNavbar > .content .middle-buttons .shopping-cart {
   position: relative;
   margin-right: 15px;

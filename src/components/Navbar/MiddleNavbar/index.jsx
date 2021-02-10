@@ -10,6 +10,7 @@ const MiddleNavbar = () => {
   const [search, setSearch] = useState("");
   const [isMobile, setIsMobile] = useState(true);
   const [showMobileNav, setShowMobileNav] = useState(false);
+  const [openSearch, setOpenSearch] = useState(false);
 
   const startSearch = () => {
     console.log("SEARCH FUNCTION");
@@ -48,7 +49,32 @@ const MiddleNavbar = () => {
             </div>
           )}
           <div className='middle-buttons'>
-            {isMobile && <SearchIcon />}
+            {isMobile && (
+              <>
+                <SearchIcon onClick={(e) => setOpenSearch(!openSearch)} />
+                <div
+                  className={
+                    openSearch
+                      ? "search-box sb-mobile active"
+                      : "search-box sb-mobile"
+                  }>
+                  <div className='search-box-wrapper'>
+                    <input
+                      type='text'
+                      name='search'
+                      id='search'
+                      value={search}
+                      placeholder='Search...'
+                      onChange={(e) => setSearch(e.target.value)}
+                    />
+                    <button type='submit' onClick={startSearch}>
+                      Search
+                    </button>
+                  </div>
+                  <div className='search-autocomplete'></div>
+                </div>
+              </>
+            )}
             <Link to='/cart' className='cart-button'>
               <div className='shopping-cart'>
                 <ShoppingCartOutlinedIcon />
