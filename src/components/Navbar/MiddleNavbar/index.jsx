@@ -14,6 +14,7 @@ const MiddleNavbar = () => {
   const checkIfMobile = () => {
     if (window.innerWidth > 991) {
       setIsMobile(false);
+      setOpenSearch(false);
     } else {
       setIsMobile(true);
     }

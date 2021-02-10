@@ -117,15 +117,30 @@ header #middleNavbar > .content .search-box {
     }
   }
 }
+header #middleNavbar > .content .search-box.sb-desktop {
+  position: relative;
+  > .autocomplete-container {
+    position: absolute;
+    top: 35px;
+    left: 36px;
+    width: 90%;
+    z-index: 100;
+    @media #{$large} {
+      left: 45px;
+      width: 817px;
+    }
+  }
+}
 header #middleNavbar > .content .search-box.sb-mobile {
-  position: fixed;
+  position: absolute;
   left: calc(50% - 145px);
-  top: -10%;
+  top: -50px;
   min-width: 290px;
   z-index: 100;
   transition: 0.5s;
   @media (min-width: 350px) {
     min-width: 320px;
+    left: calc(50% - 160px);
   }
   @media #{$tablet} {
     width: 500px;
@@ -143,9 +158,22 @@ header #middleNavbar > .content .search-box.sb-mobile {
     }
   }
   &.active {
-    top: 11%;
+    top: 100px;
     @media #{$tablet} {
-      top: 12%;
+      top: 108px;
+    }
+  }
+}
+
+.autocomplete-container {
+  background: $white;
+  border: 1px solid $grey;
+  border-top: none;
+  > .option {
+    padding: 5px 10px;
+    background: $white;
+    &:nth-child(odd) {
+      background: $grey;
     }
   }
 }

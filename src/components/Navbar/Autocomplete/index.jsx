@@ -36,6 +36,11 @@ const Autocomplete = ({ openSearch, setOpenSearch, isMobile }) => {
     setDisplay(false);
   };
 
+  const openAutocomplete = (e) => {
+    setSearch(e.target.value);
+    setDisplay(true);
+  };
+
   return (
     <>
       {isMobile ? (
@@ -52,11 +57,10 @@ const Autocomplete = ({ openSearch, setOpenSearch, isMobile }) => {
               <input
                 type='text'
                 name='search'
-                onClick={() => setDisplay(!display)}
                 id='search'
                 value={search}
                 placeholder='Search...'
-                onChange={(e) => setSearch(e.target.value)}
+                onChange={openAutocomplete}
               />
               <button type='submit' onClick={startSearch}>
                 Search
@@ -82,7 +86,7 @@ const Autocomplete = ({ openSearch, setOpenSearch, isMobile }) => {
           </div>
         </>
       ) : (
-        <div className='search-box'>
+        <div ref={wrapperRef} className='search-box sb-desktop'>
           <div className='search-box-wrapper'>
             <input
               type='text'
@@ -90,12 +94,29 @@ const Autocomplete = ({ openSearch, setOpenSearch, isMobile }) => {
               id='search'
               value={search}
               placeholder='Search...'
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={openAutocomplete}
             />
             <button type='submit' onClick={startSearch}>
               Search
             </button>
           </div>
+          {display && (
+            <div className='autocomplete-container'>
+              {options
+                .filter(({ name }) => name.indexOf(search.toLowerCase()) > -1)
+                .map((v, i) => {
+                  return (
+                    <div
+                      onClick={() => setPokeDex(v.name)}
+                      className='option'
+                      key={i}
+                      tabIndex='0'>
+                      <span>{v.name}</span>
+                    </div>
+                  );
+                })}
+            </div>
+          )}
         </div>
       )}
     </>
