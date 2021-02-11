@@ -39,7 +39,7 @@ function App() {
             <SubscribeModal showModal={showModal} setShowModal={setShowModal} />
           ) : null}
         </Route>
-        <Route exact path='/category'>
+        <Route exact path='/:category'>
           <Navbar />
           <SimpleBreadCrumbWithImage />
           <div className='container'></div>

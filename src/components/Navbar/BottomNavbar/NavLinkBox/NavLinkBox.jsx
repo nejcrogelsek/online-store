@@ -23,7 +23,11 @@ const NavLinkBox = ({ name, dropdown, subcat }) => {
           className='d nav-link'
           onMouseEnter={onEnter}
           onMouseLeave={onLeave}>
-          <button className={onHover ? "d-btn active" : "d-btn"}>{name}</button>
+          <button className={onHover ? "d-btn active" : "d-btn"}>
+            <NavLink className='nav-link' to='category' params={{ name }}>
+              {name}
+            </NavLink>
+          </button>
           <div className='d-content'>
             <div className='d-wrapper'>
               {subcat.map(({ title, inner_subcat }) => (

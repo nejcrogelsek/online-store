@@ -1,13 +1,23 @@
 import React from "react";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const MobileSubCatLinks = ({ title, subcat_name }) => {
+const MobileSubCatLinks = ({
+  title,
+  subcat_name,
+  showMobileNav,
+  setShowMobileNav,
+}) => {
+  const toggleMobileNavigation = () => {
+    setShowMobileNav(!showMobileNav);
+  };
   return (
     <li className='mn-item'>
-      <Link className='nav-link' to='/category/neki'>
+      <NavLink
+        className='nav-link'
+        to='/category/neki'
+        onClick={toggleMobileNavigation}>
         {subcat_name}
-      </Link>
+      </NavLink>
     </li>
   );
 };

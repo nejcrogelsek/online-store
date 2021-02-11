@@ -33,10 +33,15 @@ const MobileNav = ({ showMobileNav, setShowMobileNav }) => {
                 name={name}
                 dropdown={dropdown}
                 subcat={subcat}
+                showMobileNav={showMobileNav}
+                setShowMobileNav={setShowMobileNav}
               />
             ))}
             <li className='mn-sublist-item'>
-              <Link className='mn-item' to='/gifts'>
+              <Link
+                className='mn-item'
+                to='/gifts'
+                onClick={toggleMobileNavigation}>
                 Gifts
               </Link>
             </li>

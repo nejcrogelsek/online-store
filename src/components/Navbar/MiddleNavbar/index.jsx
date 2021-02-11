@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Logo from "../../../assets/images/logo.svg";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import MenuIcon from "@material-ui/icons/Menu";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import MobileNav from "../MobileNav";
 import Autocomplete from "../Autocomplete";
 
@@ -42,7 +42,9 @@ const MiddleNavbar = () => {
     <>
       <div id='middleNavbar'>
         <div className='header-logo'>
-          <img src={Logo} alt='Logo' />
+          <NavLink to='/'>
+            <img src={Logo} alt='Logo' />
+          </NavLink>
         </div>
         <div className='content'>
           {isMobile ? (

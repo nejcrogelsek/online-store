@@ -1,23 +1,35 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import MobileSubCatLinkBox from "./MobileSubCatLinkBox/MobileSubCatLinkBox";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 
-const MobileNavLinkBox = ({ name, dropdown, subcat }) => {
+const MobileNavLinkBox = ({
+  name,
+  dropdown,
+  subcat,
+  showMobileNav,
+  setShowMobileNav,
+}) => {
   const [openSubCat, setOpenSubCat] = useState(false);
 
   const toggleSubCat = () => {
     setOpenSubCat(!openSubCat);
   };
+  const toggleMobileNavigation = () => {
+    setShowMobileNav(!showMobileNav);
+  };
   return (
     <>
       {dropdown ? (
         <li className='mn-item'>
-          <Link className='nav-link' to='/category/neki'>
+          <NavLink
+            className='nav-link'
+            to='/category/neki'
+            onClick={toggleMobileNavigation}>
             {name}
-          </Link>
+          </NavLink>
           <div className='mn-sublist-toggle' onClick={toggleSubCat}>
             <ChevronRightIcon />
           </div>
@@ -34,15 +46,20 @@ const MobileNavLinkBox = ({ name, dropdown, subcat }) => {
                 subcatTitle={title}
                 dropdown={inner_dropdown}
                 inner_subcat={inner_subcat}
+                showMobileNav={showMobileNav}
+                setShowMobileNav={setShowMobileNav}
               />
             ))}
           </ul>
         </li>
       ) : (
         <li className='mn-item'>
-          <Link className='nav-link' to='/category/neki'>
+          <NavLink
+            className='nav-link'
+            to='/category/neki'
+            onClick={toggleMobileNavigation}>
             {name}
-          </Link>
+          </NavLink>
         </li>
       )}
     </>
