@@ -191,10 +191,12 @@ const Footer = () => {
           </div>
         </div>
         <div id='bottomFooter'>
-          <div className='picture'>
-            <img src={Logo} alt='Logo' />
-            <span>Redpoint</span>
-          </div>
+          <Link to='/'>
+            <div className='picture'>
+              <img src={Logo} alt='Logo' />
+              <span>Redpoint</span>
+            </div>
+          </Link>
           <div className='socials'>
             <a href='#' rel='noreferrer' target='_blank'>
               <FacebookIcon className='facebook-icon' />
