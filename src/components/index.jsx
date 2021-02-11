@@ -7,3 +7,5 @@ export { default as ManufacturersHomePage } from "./Manufacturers/HomePage";
 export { default as SubscribeModal } from "./SubscribeModal";
 export { default as InstagramEmbed } from "./InstagramEmbed";
 export { default as ProductsSection } from "./ProductsSection";
+export { default as SimpleBreadcrumb } from "./Breadcrumbs/SimpleBreadcrumb";
+export { default as SimpleBreadCrumbWithImage } from "./Breadcrumbs/SimpleBreadCrumbWithImage";

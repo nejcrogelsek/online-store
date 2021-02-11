@@ -8,6 +8,8 @@ import {
   SubscribeModal,
   InstagramEmbed,
   ProductsSection,
+  SimpleBreadcrumb,
+  SimpleBreadCrumbWithImage,
 } from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -36,6 +38,12 @@ function App() {
           {showModal ? (
             <SubscribeModal showModal={showModal} setShowModal={setShowModal} />
           ) : null}
+        </Route>
+        <Route exact path='/category'>
+          <Navbar />
+          <SimpleBreadCrumbWithImage />
+          <div className='container'></div>
+          <Footer />
         </Route>
         <Route exact path='/404-Not-Found'>
           <Navbar />

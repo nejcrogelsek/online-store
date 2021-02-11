@@ -1,0 +1,26 @@
+.breadcrumb-custom {
+  > .bc-backgroundImage {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+  }
+  > .container {
+    position: relative;
+    nav.breadcrumb-nav-wrapper {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      > ol > li {
+        color: $white;
+        > a {
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        > p {
+          color: rgba($color: $white, $alpha: 0.55);
+        }
+      }
+    }
+  }
+}
