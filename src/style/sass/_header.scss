@@ -158,7 +158,7 @@ header #middleNavbar > .content .search-box.sb-mobile {
     }
   }
   &.active {
-    top: 100px;
+    top: 45px;
     @media #{$tablet} {
       top: 108px;
     }
