@@ -9,3 +9,4 @@ export { default as InstagramEmbed } from "./InstagramEmbed";
 export { default as ProductsSection } from "./ProductsSection";
 export { default as SimpleBreadcrumb } from "./Breadcrumbs/SimpleBreadcrumb";
 export { default as SimpleBreadCrumbWithImage } from "./Breadcrumbs/SimpleBreadCrumbWithImage";
+export { default as CategoryPage } from "./Category";

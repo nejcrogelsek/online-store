@@ -10,6 +10,7 @@ import {
   ProductsSection,
   SimpleBreadcrumb,
   SimpleBreadCrumbWithImage,
+  CategoryPage
 } from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -42,7 +43,9 @@ function App() {
         <Route exact path='/:category'>
           <Navbar />
           <SimpleBreadCrumbWithImage />
-          <div className='container'></div>
+          <div className='container'>
+            <CategoryPage />
+          </div>
           <Footer />
         </Route>
         <Route exact path='/404-Not-Found'>
