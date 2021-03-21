@@ -1,4 +1,4 @@
-** This project is hobby project and I'm working on it when I have time. **
+** slowly working on it. **
 # Online store made with ReactJS
 
 •	Created unique, responsive user interfaces using React, MaterialUI, Bootstrap 4, and CSS 3 with preprocessor SASS.
